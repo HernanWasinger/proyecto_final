@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block titulo %} Lista de libros {% endblock %}
+
+{% block contenido %} 
+
+<div class="card">
+    <div class="card-header">
+        <a name="" id="" class="btn btn-success" href="{% url 'crear' %}" role="button">Agregar nuevo libro</a>
+        {% if not request.user.is_authenticated %}
+        <div class="alert alert-primary" role="alert">
+            <small>Solo las personas registradas pueden agregar nuevos libros!</small>
+          </div>
+        {% endif %}
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Libros</h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Titulo</th>
+                    <th>Imagen</th>
+                    <th>Descripcion</th>
+                    {% if request.user.is_authenticated and request.user.is_superuser %}
+                    <th>Acciones</th>
+                    {% endif %}
+                </tr>
+            </thead>
+            <tbody>  
+                {% for libro in libros %}            
+                <tr>
+                    <td>{{ libro.id }} </td>
+                    <td>{{ libro.titulo }}</td>
+                    <td>
+                    
+                    
+                    </td>
+                    <td>{{ libro.descripcion }}</td>
+                    {% if request.user.is_authenticated and request.user.is_superuser %}
+                    <td> 
+                        <a name="" id="" class="btn btn-info" href="{% url 'editar' libro.id %}" role="button">Editar</a>
+                        |
+                        <a name="" id="" class="btn btn-danger" href="{% url 'eliminar' libro.id %}" role="button">Borrar</a> </td>
+                    {% endif %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+    </div>
+    <div class="card-footer text-muted">
+    </div>
+</div>
+
+
+
+
+{% endblock %}

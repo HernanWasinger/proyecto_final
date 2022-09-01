@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block titulo %} 
+    Register
+{% endblock %}
+
+{% block contenido %} 
+
+<form action="" method="POST">
+{% csrf_token %}
+    <table>
+
+        {{form.as_table}}
+
+    </table>
+    <br>
+    <p><input type="submit" value="Crear usuario"></p>
+
+    </form>
+    
+    <p style="color: red;"> {{error}} </p>
+
+{% endblock %}
