@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+
+editar imagen
+
+{% endblock %}
+
+
+{% block contenido %}
+<main>
+    <div>
+        <div class="conteiner-image">
+            <article class="card">
+                {% if image %}
+                <img src="{{image.url}}" width="100%">
+                {% else %}
+                <img src="/media/default.jpg" width="100%">
+                {% endif %}
+
+            </article>
+        </div>
+<form action="" method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+
+
+    {{form.as_table}}
+
+
+<input class="btn btn-primary" id="enviar" type="submit" value="Guardar">
+
+</form>
+
+<p>{{errors}}</p>
+</div>
+</main>
+{% endblock %}

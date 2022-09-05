@@ -4,16 +4,14 @@
 
 {% block contenido %} 
 
-<div class="p-5 bg-light">
-    <div class="container">
-        <h1 class="display-3">Bienvenidos al sitio de la libreria</h1>
-        <p class="lead">Empezar a ingresar libros</p>
+    <div class="container"  >
+        <h1 class="display-3" style="text-align: center;"><b>Bienvenidos a la Libreria</b></h1>
+        <p class="lead" style="text-align: center;"><b>Todos los libros en un solo lugar</b></p>
         <hr class="my-2">
-        <p>Presione el boton de abajo para comenzar</p>
-        <p class="lead">
-            <a class="btn btn-primary btn-lg" href="{%url 'libros'%}" role="button">Click aquí</a>
+        <p class="lead" style="text-align: center;">
+            <a class="btn btn-primary btn-lg " href="{%url 'libros'%}" role="button">Ir al catalogo!</a>
         </p>
     </div>
-</div>
+
 
 {% endblock %}

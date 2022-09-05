@@ -1,11 +1,23 @@
 {% extends "base.html" %}
 
-{% block titulo %} 
-    Logout
-{% endblock %}
+{% block titulo %} Logout {% endblock %}
+{% block contenido%}
 
-{% block contenido %} 
 
-<h2>Cerraste sesion</h2>
+        <div class="container" style="height: 40vh; width: 40vw; background-color: rgba(200, 196, 196, 0.95); display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 25px;">
+            <h1 class="display-3 text-center">
+                <p> Esperamos
+                </p>
+                <p> que vuelvas!</p>
+            </h1>
+            <p class="text-center" style="color: rgb(244, 162, 9);"></p>
+            <p class=" text-center"">
+            <a class=" btn btn-light btn-lg" href="/" role="button">
+            Volver al inicio.
+            </a>
+            </p>
+        </div>
+
+
 
 {% endblock %}

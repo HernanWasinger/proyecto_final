@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+
+login
+
+{% endblock %}
+
+{% block contenido %}
+<main>
+
+    <div class="conteiner-porfile">
+
+        <div class="content">
+
+                    {% if image %}
+                    <img src="{{ user.profile.image.url}}" width="100%">
+                    {% else %}
+                    <img src="/media/profile_image/default.jpg" height="250" width="250" >
+                    {% endif %}
+                    <a href="{% url 'EditarPerfilImage' %}">
+                        <div class="card_content">
+                            <h3 class="card_title">Editar foto</h3>
+                            <span class="card_subtitle"></span>
+                            <p class="card_description"></p>
+                        </div>
+                    </a>
+                </article>
+
+            {% if user %}
+            <p>Nombre: {{user}}</p>
+            {% endif %}
+    
+            {% if phone %}
+            <p>Telefono: {{phone}}</p>
+            {% else %}
+            <p>Telefono: Ingresa un telefono!</p>
+            {% endif %}
+    
+    
+            {% if address %}
+            <p>Direccion: {{address}}</p>
+            {% else %}
+            <p>Direccion: Ingresa una direccion!</p>
+            {% endif %}
+
+            <a class="nav-link btn btn-success m-2" href="{% url 'editarPerfil' %}">Editar el perfil</a>
+        </div>
+    </div>
+</main>
+{% endblock %}

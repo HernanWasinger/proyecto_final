@@ -14,7 +14,7 @@ def libros(request):
     return render(request, 'libros/index.html', {'libros': libros})
 
 def crear(request):
-    if request.user.is_authenticated and request.user.is_superuser:
+    if request.user.is_authenticated:
         formulario = LibroForm(request.POST or None, request.FILES or None)
         if formulario.is_valid():
             formulario.save()

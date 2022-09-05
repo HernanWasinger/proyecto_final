@@ -4,20 +4,20 @@
     Login
 {% endblock %}
 
-{% block contenido %} 
-
+{% block contenido %}
+<main >
 <form action="" method="POST">
 {% csrf_token %}
-    <table>
 
-        {{form.as_table}}
 
-    </table>
+    {{form.as_table}}
 
-    <p><input type="submit" value="Iniciar Sesion"></p>
 
-    </form>
-    
-    <p style="color: red;"> {{error}} </p>
+<input class="btn btn-primary" id="enviar" type="submit" value="iniciar sesion">
+
+</form>
+
+<p>{{error}}</p>
+</main>
 
 {% endblock %}
